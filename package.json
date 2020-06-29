@@ -25,7 +25,7 @@
     "twitter"
   ],
   "nodecg": {
-    "compatibleRange": "~0.8.0",
+    "compatibleRange": "^1.0.0",
     "dashboardPanels": [
       {
         "name": "nodecg-twitter",
