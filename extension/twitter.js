@@ -33,7 +33,8 @@ module.exports = function (nodecg) {
 		const id = url.split('/').pop();
 		twitter.get('statuses/show', {
 			id,
-			include_my_retweet: false
+			include_my_retweet: false,
+			tweet_mode: 'extended'
 		}, (error, tw) => {
 			if (error) {
 				nodecg.log.error('Couldn\'t get tweet:', error[0].message);
@@ -48,7 +49,7 @@ module.exports = function (nodecg) {
 				id: tw.id_str
 			};
 
-			let msg = tw.text;
+			let msg = tw.full_text;
 
 			// Parse mentions
 			tw.entities.user_mentions.reverse().forEach(mention => {
